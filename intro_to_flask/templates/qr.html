@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+  
+{% block content %}
+
+	<script type="text/javascript">
+	function countDown(sec, elem1, elem2) {
+		var element = document.getElementById(elem2);
+		element.innerHTML = "You have " + sec + " seconds left";
+		if (sec < 1) {
+			clearTimeout(timer);
+			element = document.getElementById(elem1);
+			element.innerHTML = "<h2>Complete! Thank you!</h2>";
+		}
+
+		sec--;
+		var timer = setTimeout('countDown('+sec+',"' + elem1 +'", "'+ elem2+'")', 1000);
+	}
+
+	</script>
+
+	<div class="status">
+			<img id="qrcode" src="{{qrcode(qrStr)}}">
+	</div>
+
+
+{% endblock %}

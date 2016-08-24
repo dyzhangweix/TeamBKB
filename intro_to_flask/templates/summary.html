@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="jumbo">
+    <h2>Attendance Summary<h2>
+  </div>
+
+  <form action="{{ url_for('summary') }}" method=post>
+  	{{ form.course.label }}   <div class="dropdownstyle">{{ form.course }}</div> 
+    {{ form.time.label }}    {{ form.time }} 
+    <br><br>
+    {{ form.update}}
+  </form>
+  <h3> </h3>
+  <table>
+  	{{table}}
+  </table>
+  <h3> </h3>
+  <button type="button" class='myButton' onClick="location.href='/changestatus'">Change Status Manually</button>
+{% endblock %}

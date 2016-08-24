@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+  <div class="jumbo">
+    <h2>Welcome to the BKB app<h2>
+    {% if 'email' in session %}
+    <h3>This is the home page<h3>
+    {% else %}
+    <h3>Please Click on SignIn/Up</h3>
+    {% endif %}
+  </div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+  <h2>Check-In</h2>
+    <form action="{{ url_for('checkin') }}" method=post>
+     
+    {{ form.coursetext.label }}
+    {{ form.coursetext }} 
+    {{ form.time.label }}
+    {{ form.time }}
+    {{ form.studentid.label }} 
+    {{ form.studentid }}
+    <br><br>
+    {{ form.checkin }}
+  </form>
+{% endblock %}
